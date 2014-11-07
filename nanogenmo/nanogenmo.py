@@ -127,7 +127,7 @@ def get_random_novel():
     novel += "\n\n"
     r = range(random.randrange(10, 20))
     for i in r:
-        novel += "======== Chapter " + str(i) + ": " + \
+        novel += "Chapter " + str(i) + ": " + \
                  random.choice([
                      words.get_random_noun(),
                      words.get_random_adjective(),
@@ -136,7 +136,7 @@ def get_random_novel():
                      get_random_noun_phrase(),
                      get_random_verb_phrase()
                  ]) + \
-                 " ========\n\n" + \
+                 "\n====================\n\n" + \
                  get_random_chapter()
         print "Novel progress: %d / %d chapters" % (i + 1, len(r))
     return novel
@@ -147,6 +147,8 @@ def get_random_character():
 
 print "File: "
 novel_file = "./" + raw_input("> ")
+if not novel_file.endswith(".md"):
+    novel_file += ".md"
 start_time = int(round(time.time() * 1000))
 f = open(novel_file, 'w')
 f.write(get_random_novel().encode("utf8"))
