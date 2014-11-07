@@ -84,15 +84,13 @@ def get_random_noun_phrase():
 
 
 def get_random_verb_phrase():
-    choice = random.randrange(4)
+    choice = random.randrange(3)
     if choice == 0:
         return words.get_random_verb()['past'] + " " + get_random_noun_phrase()
     elif choice == 1:
         return words.get_random_verb()['past']
     elif choice == 2:
-        return words.get_random_adverb() + " " + words.get_random_verb()['past'] + " " + get_random_noun_phrase()
-    elif choice == 3:
-        return words.get_random_adverb() + " " + words.get_random_verb()['past']
+        return words.get_random_adverb() + " " + get_random_verb_phrase()
 
 
 def get_random_paragraph():
@@ -127,7 +125,7 @@ def get_random_novel():
     novel += "\n\n"
     r = range(random.randrange(10, 20))
     for i in r:
-        novel += "Chapter " + str(i) + ": " + \
+        novel += "Chapter " + str(i + 1) + ": " + \
                  random.choice([
                      words.get_random_noun(),
                      words.get_random_adjective(),
