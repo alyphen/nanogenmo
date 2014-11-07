@@ -115,7 +115,7 @@ def get_random_novel():
     novel = ""
     generate_characters()
     for character in characters:
-        novel += "%s %s is the %s in this story.\n" % (
+        novel += "%s %s is the %s in this story.\n\n" % (
             character.first_name,
             character.last_name,
             random.choice(
